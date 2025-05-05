@@ -47,11 +47,14 @@ skus = []
 cards = parsed_html.select('.skus-area .card')
 
 for card in cards:
+    sku = {}
 
     # name
     name = card.select_one('meta[itemprop="name"]')
     name = name.get('content')
-    skus.append(name)
+    #skus.append(name)
+    sku['name'] = name
+
 
     # current price
     current_price = card.select_one('.prod-pnow')
@@ -59,22 +62,37 @@ for card in cards:
         match = re.search(r'[\d.,]+', current_price.get_text())
         if match:
             priceNow = float(match.group(0).replace(',', '.'))
-            skus.append(f"R$ {priceNow}")
+            #skus.append(f"Preco atual: R$ {priceNow}")
+            sku['current price'] = priceNow
     else:
-        skus.append(None)
+        #skus.append(None)
+        sku['current price'] = None
 
-    
 
+     # old price
+    old_price = card.select_one('.prod-pold')
+    if old_price:
+        match = re.search(r'[\d.,]+', old_price.get_text())
+        if match:
+            priceOld = float(match.group(0).replace(',', '.'))
+            #skus.append(f"Preco antigo: R$ {priceOld}")
+            sku['old price'] = priceOld
+    else:
+        #skus.append(None)
+        sku['old price'] = None
 
+    # available
+    not_available = 'not-avaliable'
+
+    if  not_available in card.get('class'):
+        #skus.append(None)
+        sku['available'] = None
+    else:
+        #skus.append(True)
+        sku['available'] = True
+
+    skus.append(sku)
 resposta_final['skus'] = skus
-
-
-
-
-
-
-
-
 
 # Gera string JSON com a resposta final
 json_resposta_final = json.dumps(resposta_final, indent=2)

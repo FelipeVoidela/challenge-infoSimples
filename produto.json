@@ -16,11 +16,24 @@
     " Cada Patinho de Borracha Qu\u00e2ntico vem equipado com um sistema de comunica\u00e7\u00e3o interdimensional, permitindo que eles conversem n\u00e3o apenas entre si, mas tamb\u00e9m com outros objetos inanimados no banheiro - prepare-se para di\u00e1logos improv\u00e1veis entre seu pato de borracha e o sabonete! Al\u00e9m disso, esses patos t\u00eam uma habilidade secreta de transforma\u00e7\u00e3o: basta apertar sua barriguinha e assistir enquanto se transformam em mini submarinos de borracha, prontos para explorar os confins da banheira em busca de aventuras subaqu\u00e1ticas surreais. Com os Patos de Borracha Qu\u00e2nticos, o limite da divers\u00e3o \u00e9 apenas sua imagina\u00e7\u00e3o (e talvez a sanidade do Dr. Quacksalot)! "
   ],
   "skus": [
-    "Rubber Duck MK Ultra - Original",
-    "R$ 12.68",
-    "Rubber Duck MK Ultra - Summer Version",
-    null,
-    "Rubber Duck MK Ultra - Batman Version",
-    "R$ 18.98"
-  ]
+    {
+      "name": "Rubber Duck MK Ultra - Original",
+      "current price": 12.68,
+      "old price": 16.98,
+      "available": true
+    },
+    {
+      "name": "Rubber Duck MK Ultra - Summer Version",
+      "current price": null,
+      "old price": null,
+      "available": null
+    },
+    {
+      "name": "Rubber Duck MK Ultra - Batman Version",
+      "current price": 18.98,
+      "old price": null,
+      "available": true
+    }
+  ],
+  "properties": []
 }
