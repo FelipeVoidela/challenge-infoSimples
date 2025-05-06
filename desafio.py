@@ -156,55 +156,8 @@ match = re.search(r'\d+\.?\d*', reviews_average_score.get_text())
 reviews_average_float = float(match.group())
 resposta_final['reviews average score'] = reviews_average_float
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#url
+resposta_final['url'] = url
 
 # Gera string JSON com a resposta final
 json_resposta_final = json.dumps(resposta_final, indent=2)
