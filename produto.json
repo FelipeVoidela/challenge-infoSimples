@@ -35,5 +35,34 @@
       "available": true
     }
   ],
-  "properties": []
+  "properties": [
+    {
+      "label": "Color",
+      "value": "Various"
+    },
+    {
+      "label": "Material",
+      "value": "Rubber"
+    },
+    {
+      "label": "Shape",
+      "value": "Ducky"
+    },
+    {
+      "label": "Size",
+      "value": "Medium"
+    },
+    {
+      "label": "Weight",
+      "value": "394 g"
+    },
+    {
+      "label": "Radioactivity Level",
+      "value": "Low"
+    },
+    {
+      "label": "Warranty",
+      "value": "1 year"
+    }
+  ]
 }

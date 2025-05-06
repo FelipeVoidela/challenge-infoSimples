@@ -96,46 +96,32 @@ resposta_final['skus'] = skus
 
 # properties
 product_properties = parsed_html.select('table.pure-table.pure-table-bordered')
+
+# pega primeira tabela div(sem nome)
 product_properties_table = product_properties[0]
-rows = product_properties_table.select_one('tbody tr')
 
 properties = []
 
-for row in rows:
+# percorre cada linha que contenha a tag tr
+for row in product_properties_table.find_all('tr'):
     propertie = {}
 
-    label = row.select_one('td b')
-    value = row.select_one('td')
+    # encontra colunas que contenham a tag td
+    find_td = row.find_all('td')
    
+    label_element = find_td[0].find('b') # valor label esta em tag b dentro da primeira tag td
+    value_element = find_td[1]  # O value esta em td
 
-    if label and value :
-        label_txt = label.get_text()
-        value_txt = value.get_text() 
-        
-        propertie['label'] = label_txt
-        propertie['value'] = value_txt
+   
+    label_txt = label_element.get_text()
+    value_txt = value_element.get_text()
 
+    propertie['label'] = label_txt
+    propertie['value'] = value_txt
 
     properties.append(propertie)
+
 resposta_final['properties'] = properties
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Gera string JSON com a resposta final
 json_resposta_final = json.dumps(resposta_final, indent=2)
