@@ -150,6 +150,12 @@ for review_comment in reviews_comments:
     reviews.append(review)
 resposta_final['reviews'] = reviews
 
+# reviews average score
+reviews_average_score = parsed_html.select_one('#comments h4')
+match = re.search(r'\d+\.?\d*', reviews_average_score.get_text())
+reviews_average_float = float(match.group())
+resposta_final['reviews average score'] = reviews_average_float
+
 
 
 
