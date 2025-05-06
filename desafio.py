@@ -94,6 +94,49 @@ for card in cards:
     skus.append(sku)
 resposta_final['skus'] = skus
 
+# properties
+product_properties = parsed_html.select('table.pure-table.pure-table-bordered')
+product_properties_table = product_properties[0]
+rows = product_properties_table.select_one('tbody tr')
+
+properties = []
+
+for row in rows:
+    propertie = {}
+
+    label = row.select_one('td b')
+    value = row.select_one('td')
+   
+
+    if label and value :
+        label_txt = label.get_text()
+        value_txt = value.get_text() 
+        
+        propertie['label'] = label_txt
+        propertie['value'] = value_txt
+
+
+    properties.append(propertie)
+resposta_final['properties'] = properties
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Gera string JSON com a resposta final
 json_resposta_final = json.dumps(resposta_final, indent=2)
 
