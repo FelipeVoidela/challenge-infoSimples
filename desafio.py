@@ -123,6 +123,83 @@ for row in product_properties_table.find_all('tr'):
 
 resposta_final['properties'] = properties
 
+# reviews
+reviews_comments = parsed_html.select('#comments .analisebox')
+reviews = []
+
+for review_comment in reviews_comments:
+    review = {}
+
+    # name
+    name = review_comment.select_one('.analiseusername')
+    review['name'] = name.get_text()
+
+    # date
+    date = review_comment.select_one('.analisedate')
+    review['date'] = date.get_text()
+
+    # score
+    score = review_comment.select_one('.analisestars')
+    star_count = score.get_text().count('★')
+    review['score'] = star_count
+
+    # text
+    text = review_comment.select_one('p')
+    review['text'] = text.get_text() 
+    
+    reviews.append(review)
+resposta_final['reviews'] = reviews
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Gera string JSON com a resposta final
 json_resposta_final = json.dumps(resposta_final, indent=2)
 

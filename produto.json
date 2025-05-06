@@ -64,5 +64,25 @@
       "label": "Warranty",
       "value": "1 year"
     }
+  ],
+  "reviews": [
+    {
+      "name": "Louisa Eliel",
+      "date": "28/07/2021",
+      "score": 4,
+      "text": "Very good rubber ducks, however I think they are a bit too big for me."
+    },
+    {
+      "name": "Kairo Josu\u00e9",
+      "date": "12/05/2021",
+      "score": 1,
+      "text": "P\u00e9ssima qualidade. J\u00e1 n\u00e3o fazem patos de borracha como antigamente."
+    },
+    {
+      "name": "Victor Huey",
+      "date": "03/04/2021",
+      "score": 5,
+      "text": "Very good"
+    }
   ]
 }
